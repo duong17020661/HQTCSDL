@@ -22,9 +22,9 @@
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">HOT</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-fashion" role="tab" aria-controls="nav-profile" aria-selected="false">Thời trang</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-baby" role="tab" aria-controls="nav-profile" aria-selected="false">Danh sách nhân viên</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-movie" role="tab" aria-controls="nav-contact" aria-selected="false">Danh sách các đơn hàng</a>
+    <a class="nav-item nav-link" id="sel_fas" data-toggle="tab" href="#nav-fashion" role="tab" aria-controls="nav-profile" aria-selected="false">Thời trang</a>
+    <a class="nav-item nav-link" id="add_emp" data-toggle="tab" href="#nav-baby" role="tab" aria-controls="nav-profile" aria-selected="false">Danh sách nhân viên</a>
+    <a class="nav-item nav-link" id="add_ord" data-toggle="tab" href="#nav-movie" role="tab" aria-controls="nav-contact" aria-selected="false">Danh sách các đơn hàng</a>
     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-art" role="tab" aria-controls="nav-profile" aria-selected="false">Search</a>
     
   </div>
@@ -103,40 +103,65 @@
               <th>Tên nhân viên</th>
               <th>Email</th>
               <th>Công việc</th>
+              <th>Thay đổi</th>
               <th>Xóa</th>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#huy">Xóa</button></td>
+            <td id="nv1"></td>
+            <td id="email1"></td>
+            <td id="job1"></td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#thaydoi1">Thay đổi</button></td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#huy1">Xóa</button></td>
           </tr>
+          <tr>
+              <td id="nv2"></td>
+              <td id="email2"></td>
+              <td id="job2"></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#thaydoi2">Thay đổi</button></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#huy2">Xóa</button></td>
+            </tr>
         </table>
+        
   </div>
   <div class="tab-pane fade" id="nav-movie" role="tabpanel" aria-labelledby="nav-contact-tab">
         <h1>Danh sách đơn hàng</h1>
         <table class="table">
             <tr>
                 <th>Món đồ</th>
+                <th>Số lượng</th>
                 <th>Người nhận</th>
                 <th>Địa chỉ</th>
                 <th>Hủy</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td id="hang1"></td>
+              <td id="soluong1"></td>
+              <td id="nguoi1"></td>
+              <td id="dc1"></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#huy">Hủy</button></td>
             </tr>
+            <tr>
+                <td id="hang2"></td>
+                <td id="soluong2"></td>
+              <td id="nguoi2"></td>
+              <td id="dc2"></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#huy">Hủy</button></td>
+              </tr>
           </table>
   </div>
   <div class="tab-pane fade" id="nav-art" role="tabpanel" aria-labelledby="nav-profile-tab">
         <h1>Search</h1>
-        <input class="form-control" type="text" placeholder="Nhập tên món hàng" aria-label="Search" >
-        <button type="button" class="btn btn-primary">Tìm kiếm</button>
-    <div></div>
-    <div></div>
-    <div></div>
+        <input class="form-control" type="text" placeholder="Nhập tên món hàng" aria-label="Search" id="search">
+        <button type="button" class="btn btn-primary" id="find">Tìm kiếm</button>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" id="name_sea"></h5>
+                <p class="card-text" style="color:red"  id="price_sea"></p>
+                <p class="card-text">Số lượng: </p><p id="quantity_sea"></p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dathang">Đặt hàng</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#phanhoi">Phản hồi</button>
+            </div>
+        </div>
     </div>
 </div>
 </div>
@@ -164,7 +189,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-              <button type="dathang" class="btn btn-primary" id="dathang">Đặt hàng</button>
+              <button type="dathang" class="btn btn-primary" id="dathang1" >Đặt hàng</button>
             </div>
           </div>
         </div>
@@ -190,6 +215,7 @@
         </div>
       </div>
       <div id="object"><p id="object"></p></div>
+      
       <script type="text/javascript" src="add.js" ></script>
       <script type="text/javascript" src="update.js" ></script>
       <script type="text/javascript" src="search.js" ></script>
